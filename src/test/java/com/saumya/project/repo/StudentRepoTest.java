@@ -22,9 +22,9 @@ public class StudentRepoTest {
 	
 	@Test
 	public void testStudentRepo() {
-		Student student = new Student(1l , "Saumya" , 123);
+		Student student = new Student(1 , "Saumya" , 123);
 		repository.save(student);
-		Student savedStudent = repository.findById(1l).get();
+		Student savedStudent = repository.findById(1).get();
 		assertNotNull(savedStudent);
 		assertEquals(student.getName(), savedStudent.getName());
 		assertEquals(student.getId(), savedStudent.getId());

@@ -1,17 +1,19 @@
 package com.saumya.project.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
 public class Student {
 
 	@Id
-	private long id;
+	private int id;
 	private String name;
 	private int testscore;
 
-	public Student(long id, String name, int testscore) {
+	public Student(int id, String name, int testscore) {
 
 		this.id = id;
 		this.name = name;
@@ -27,7 +29,7 @@ public class Student {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -45,6 +47,11 @@ public class Student {
 
 	public void setTestscore(int testscore) {
 		this.testscore = testscore;
+	}
+
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", testscore=" + testscore + "]";
 	}
 
 }
